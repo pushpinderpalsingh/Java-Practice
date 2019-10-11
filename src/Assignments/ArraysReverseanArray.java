@@ -9,11 +9,20 @@ public class ArraysReverseanArray {
 	    int[] arr= TakeInput(n);
 	    int j=arr.length-1;
 	    int temp;
-	    for(int i=0;i<(arr.length-1)/2;i++) {
+	    if(arr.length%2==0) {
+	     for(int i=0;i<arr.length/2;i++) {
+		    	temp=arr[i];
+		    	arr[i]=arr[j];
+		    	arr[j]=temp;
+		    	j--;
+		    }}
+	    else {
+	    	for(int i=0;i<(arr.length-1)/2;i++) {
 	    	temp=arr[i];
 	    	arr[i]=arr[j];
 	    	arr[j]=temp;
 	    	j--;
+	    }
 	    }
 	    for(int val :arr) {
 	    	System.out.println(val);
