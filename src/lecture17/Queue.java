@@ -30,6 +30,9 @@ public class Queue {
 		size--;
 		return temp;
 	}
+	public int size() {
+		return size;
+	}
 	public void display() {
 		for(int i=front; i<front+size; i++) {
 			int idx= i%data.length;
