@@ -2,7 +2,7 @@ package lecture16;
 
 public class stack {
 
-	int[] data;
+	protected int[] data;
 	int tos;
 
 	public stack() {
@@ -16,7 +16,7 @@ public class stack {
 	}
 
 	public void push(int item) {
-		if (tos == data.length - 1)
+		if (isFull())
 			return;
 		tos++;
 		data[tos] = item;
@@ -36,6 +36,9 @@ public class stack {
 		return tos+1;
 	
 }
+	public boolean isFull() {
+		return tos == data.length - 1;
+	}
 	public boolean isEmpty() {
 		return tos==-1;
 	}
