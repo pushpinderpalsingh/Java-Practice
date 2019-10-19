@@ -22,10 +22,17 @@ public class stack {
 		data[tos] = item;
 	}
 
-	public int pop() {
-		if(tos==-1)
-		   return -1;
-		return tos--;
+	public int pop() throws Exception {
+
+		if (isEmpty()) {
+			throw new Exception("Stack is Empty");
+		}
+
+		int temp = data[tos];
+		data[this.tos] = 0;
+		tos--;
+
+		return temp;
 	}
 	public int peek(){
 		if(tos==-1)
@@ -36,6 +43,12 @@ public class stack {
 		return tos+1;
 	
 }
+	public void Display() {
+		for (int i = tos; i >= 0; i--) {
+			System.out.print(data[i]+ " ");
+		}
+		System.out.println();
+	}
 	public boolean isFull() {
 		return tos == data.length - 1;
 	}

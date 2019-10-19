@@ -1,7 +1,7 @@
 package lecture17;
 
 public class Queue {
-	protected int[] data;
+	public int[] data;
 	protected int front;
 	protected int size;
 	
@@ -32,7 +32,8 @@ public class Queue {
 	}
 	public void display() {
 		for(int i=front; i<front+size; i++) {
-			System.out.print(data[i]+ " ");
+			int idx= i%data.length;
+			System.out.print(data[idx]+ " ");
 		}
 		System.out.println();
 	}
