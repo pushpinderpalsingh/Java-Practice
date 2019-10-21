@@ -155,6 +155,7 @@ public class LinkedList {
 		}
 		else if(idx == size-1) {
 			return removeLast();
+			
 		}
 		else {
 			Node pnode = getNodeAt(idx-1);
