@@ -1,32 +1,42 @@
 package Assignments;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Recusrion_Subsequence {
 
 	public static void main(String[] args) {
 		Scanner scn = new Scanner(System.in);
-		sub(scn.next(), 0);
+		String str = scn.next();
+		ArrayList<String> ans = sub(str);
+	for(String val: ans) {
+		System.out.print(val+" ");
+	}
+	System.out.println();
+		System.out.println((int)Math.pow(2, str.length()));
 
 	}
-	public static void sub(String str, int cnt) {
-		if(str.length()==0)
-			return;
+	public static ArrayList<String> sub(String str) {
+	
+		if(str.length()==0) {
+			ArrayList<String> base = new ArrayList<String>();
+			base.add(" ");
+			return base;
+		}
 		
-		char ch = str.charAt(0);
+		char cc = str.charAt(0);
 		String ros = str.substring(1);
 		
-		System.out.print(ch+ " ");
+		ArrayList<String>  rr = sub(ros);
+		ArrayList<String>  mr = new ArrayList<String>();
 		
-		sub(ros,cnt+1);
-		System.out.println();
-	if(str.length()>=cnt) {
-		String ch2 = str.substring(0,cnt);
-	    String ros2 = str.substring(cnt);
-	    System.out.print(ch2 + " ");
-	    sub(ros2, cnt+1);
-
-	}
+		for(String val : rr) {
+		mr.add(cc + val);	
+		mr.add(val);
+			
+		}
+		
+		return mr;
 	}
 
 }

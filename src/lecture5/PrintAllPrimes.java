@@ -3,7 +3,7 @@ package lecture5;
 public class PrintAllPrimes {
 
 	public static void main(String[] args) {
-		PrintPrime(5, 27);
+		PrintPrime(0, 10);
 	}
 
 	public static void PrintPrime(int ll, int ul) {

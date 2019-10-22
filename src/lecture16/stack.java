@@ -45,9 +45,8 @@ public class stack {
 }
 	public void Display() {
 		for (int i = tos; i >= 0; i--) {
-			System.out.print(data[i]+ " ");
+			System.out.println(data[i]);
 		}
-		System.out.println();
 	}
 	public boolean isFull() {
 		return tos == data.length - 1;
