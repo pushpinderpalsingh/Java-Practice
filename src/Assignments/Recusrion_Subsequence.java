@@ -31,9 +31,8 @@ public class Recusrion_Subsequence {
 		ArrayList<String>  mr = new ArrayList<String>();
 		
 		for(String val : rr) {
-		mr.add(cc + val);	
-		mr.add(val);
-			
+			mr.add(val);
+			mr.add(cc + val);
 		}
 		
 		return mr;

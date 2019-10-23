@@ -46,7 +46,7 @@ public class PlayingWithCards {
        int i=0;
 		for (i = 2; true ; i++) {
 				if (isPrime(i) == true)
-                       cn
+                       cnt++;
 				if(cnt==it)
 					return i;
 			}
