@@ -10,35 +10,26 @@ public class GetMazePathD {
 		Scanner scn = new Scanner(System.in);
 		int er = scn.nextInt();
 		int ec = scn.nextInt();
-        ArrayList<String> ans = mp(1, 1, er, ec);
-        for(String val : ans)
-        	System.out.print(val+" ");
+        int ans = mp(1, 1, er, ec, new String());
         System.out.println();
-        System.out.println(ans.size());
+        System.out.println(ans);
 	}
-	public static ArrayList<String> mp (int cr, int cc , int er, int ec){
+	public static int mp (int cr, int cc , int er, int ec , String ans){
 		if(cr==er && cc == ec) {
-			ArrayList<String> bc = new ArrayList<String>();
-			bc.add(" ");
-			return bc;
+			System.out.print(ans+" ");
+			return 1;
 		}
 		if(cr>er || cc > ec) {
-			ArrayList<String> bc = new ArrayList<String>();
-			return bc;
+			return 0;
 		}
-		ArrayList<String> rr = mp(cr+1, cc, er, ec);
-		ArrayList<String> mr = new ArrayList<String>();
-		for(String rs : rr)
-			mr.add("V" + rs);
-		rr = mp(cr, cc+1 , er, ec);
-
-		for(String rs : rr)
-			mr.add("H" +rs);
+		int mr=0;
+		int rr = mp(cr+1, cc, er, ec, "V"+ans);
+		mr+=rr;
+		rr = mp(cr, cc+1 , er, ec, "H"+ans);
+        mr+=rr;
 		if(cr==cc) {
-		rr = mp(cr+1, cc+1, er, ec);
-		
-		for(String rs : rr)
-			mr.add("D"+rs);
+		rr = mp(cr+1, cc+1, er, ec, "D" +ans);
+		mr+=rr;
 		}
 		return mr;
 	} 
