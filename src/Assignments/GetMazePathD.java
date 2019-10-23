@@ -23,9 +23,9 @@ public class GetMazePathD {
 			return 0;
 		}
 		int mr=0;
-		int rr = mp(cr+1, cc, er, ec, "V"+ans);
+		int rr = mp(cr+1, cc, er, ec, "H"+ans);
 		mr+=rr;
-		rr = mp(cr, cc+1 , er, ec, "H"+ans);
+		rr = mp(cr, cc+1 , er, ec, "V"+ans);
         mr+=rr;
 		if(cr==cc) {
 		rr = mp(cr+1, cc+1, er, ec, "D" +ans);
