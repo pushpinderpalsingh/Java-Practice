@@ -277,6 +277,7 @@ public class LinkedList {
 		}
 		return a.val;
 	}
+	
 	public void createDummyList() {
         Node n1 = new Node(10);
         Node n2 = new Node(20);
@@ -303,6 +304,7 @@ public class LinkedList {
         
         System.out.println(intersection(head1,head2));
     }
+	
 	public int intersection(Node h1, Node h2) {
 		Node f1 = h1;
 		Node f2 = h2;
@@ -315,5 +317,9 @@ public class LinkedList {
 		
 		return (f1==null)? -1 : f1.val;
 	}
+	
 
+    public void ReverseInGroup(int k) {
+        
+    }
 }

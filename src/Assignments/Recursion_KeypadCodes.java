@@ -1,28 +1,40 @@
 package Assignments;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Recursion_KeypadCodes {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		kc("12", new StringBuilder());
+	    Scanner scn = new Scanner(System.in);
+		ArrayList<String> ans = kc(scn.next());
+		for(String str : ans)
+			System.out.print(str +" ");
+		System.out.println();
+		System.out.print(ans.size());
 	}
 	
-	public static void kc(String num, StringBuilder ans) {
-		if(num.length()>=0) {
-			System.out.print(ans+" ");
-			return;
+	public static ArrayList<String> kc(String num) {
+      if(num.length()==0) {
+			ArrayList<String> bc = new ArrayList<String>();
+			bc.add("");
+			return bc;
 		}
 		
 		int no =Integer.parseInt(num.substring(0,1));
 		String ros = num.substring(1);
 		
 		String cc = NumtoString(no);
-		StringBuilder rr = new StringBuilder();
-		for(int i=1; i<=ans.length();i++)
-		{
-				rr.append(""+ cc.charAt(i) + ans + " ");
+		ArrayList<String> rr = kc(ros);
+		ArrayList<String> ans = new ArrayList<String>();
+		
+			for(int i=0; i<cc.length() ; i++) {
+				for(String val : rr) 
+			ans.add(""+cc.charAt(i)+ val );
 		}
-		kc(ros, rr);
+			
+		return ans;
+		
 	}
 	
 	public static String NumtoString(int num) {

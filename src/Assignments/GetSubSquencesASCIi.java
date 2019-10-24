@@ -8,27 +8,35 @@ public class GetSubSquencesASCIi {
 	public static void main(String[] args) {
 		Scanner scn = new Scanner(System.in);
 		String str = scn.next();
-		int ans = sub(str, new StringBuilder());
+		ArrayList<String> ans = sub(str);
+	    for(String val : ans)
+	    	System.out.print(val + " ");
 	    System.out.println();
-	    System.out.println(ans);
+	    System.out.println(ans.size());
 	}
-	public static int sub(String str,StringBuilder ans) {
+	public static ArrayList<String> sub(String str) {
 	
 		if(str.length()==0) {
-			System.out.print(ans+" ");
-			return 1;
+			ArrayList<String> bc = new ArrayList<String>();
+			bc.add(" ");
+			return bc;
 		}
 		
 		char cc = str.charAt(0);
+		int num = cc;
+		String no = Integer.toString(num);
 		String ros = str.substring(1);
-		int mr =1;
-		 StringBuilder st = new StringBuilder();
-		 for(int i=0; i<ans.length();i++)
-	         
-		ans.append(""+(int)cc+ans+" ");
+		ArrayList<String> rr = sub(ros);
+		ArrayList<String> mr = new ArrayList<String>();
 		
-		int  rr = sub(ros,ans);
-		mr+=rr;
+		for(String val : rr)
+			mr.add(val);
+		
+		for(String val : rr)
+			mr.add(cc+val);
+		
+		for(String val : rr)
+			mr.add(""+num+val);
 		return mr;
 	}
 

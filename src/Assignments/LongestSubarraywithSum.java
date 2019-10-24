@@ -47,6 +47,7 @@ static	Scanner scn=new Scanner(System.in);
     				sum+=arr[i];
     				ans++;
     			}
+    			
     			if(sum>0) {
     				return ans;
     			}

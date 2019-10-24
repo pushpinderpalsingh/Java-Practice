@@ -1,9 +1,9 @@
 package Assignments;
 
 import java.util.Scanner;
+import java.util.Stack;
 
-import lecture16.stack;
-import lecture18.DynamicStack;
+
 
 public class PlayingWithCards {
 
@@ -11,7 +11,7 @@ public class PlayingWithCards {
 		Scanner scn = new Scanner(System.in);
 		int num = scn.nextInt();
 		int iter = scn.nextInt();
-		stack A = new DynamicStack();
+		Stack<Integer> A = new Stack<>();
 		int cnt=1;
 		
 		while(num>0) {
@@ -23,21 +23,24 @@ public class PlayingWithCards {
 			A = playcard(A,primeno(cnt));
 			cnt++;
 		}
-		A.Display();
+		for(int val : A)
+			System.out.print(val+" ");
 	}
 	
-	public static stack playcard(stack A , int prime) throws Exception {
-		stack B = new DynamicStack();
-		stack A1 = new DynamicStack();
+	public static Stack<Integer> playcard(Stack<Integer> A , int prime) throws Exception {
+		Stack<Integer> B = new Stack<>();
+		Stack<Integer> A1 = new Stack<>();
 		
 		while(!A.isEmpty()){
 			if(A.peek()%prime == 0) {
-				B .push(A.pop());
+				B . push(A.pop());
 			}
-			A1.push(A.pop());
+			else
+		     A1.push(A.pop());
 		}
 		
-		B.Display();
+		for(int val : B)
+			System.out.print(val+" ");
 		return A1;
 	}
 	
