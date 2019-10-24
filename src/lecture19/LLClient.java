@@ -12,17 +12,24 @@ public class LLClient {
 		ll1.addLast(5);
 		ll1.addLast(6);
 		ll1.addLast(7);
+		ll1.Display();
+		ll1.RDR();
+		ll1.Display();
+		ll1.RPR();
+		ll1.Display();
+		System.out.println(ll1.mid());
+		System.out.println(ll1.KthFromLast(2));
 		
-		ll1.addLast(1);
-        ll1.Display();
-        ll1.addat(10, 1);
-        ll1.Display();
-        ll1.removeFirst();
-        ll1.Display();
-       ll1.removeLast();
-        ll1.Display();
-        ll1.removeAt(0);
-        ll1.Display();
+//		ll1.addLast(1);
+//        ll1.Display();
+//        ll1.addat(10, 1);
+//        ll1.Display();
+//        ll1.removeFirst();
+//        ll1.Display();
+//       ll1.removeLast();
+//        ll1.Display();
+//        ll1.removeAt(0);
+//        ll1.Display();
 	}
 
 }
