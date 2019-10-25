@@ -8,7 +8,8 @@ public class ReplaceThemAll {
         int n=scn.nextInt();
         String x = new String();
         x=Integer.toString(n);
-		x= x.replace('0','5');
+        
+		x= x.replace("0","5");
 		System.out.println(x);
 	}
 }
