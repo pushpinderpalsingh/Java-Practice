@@ -21,8 +21,19 @@ public class PlayingWithCards {
 			A = playcard(A, primeno(cnt));
 			cnt++;
 		}
-		for (int val : A)
-			System.out.print(val + " ");
+		int[] aa = new int[A.size()];
+		int i=0;
+		for (int val : A) {
+			aa[i] = val;
+			i++;
+		}
+		i--;
+		while(i>=0)
+		{
+			System.out.println(aa[i]);
+			i--;
+		}
+			
 	}
 
 	public static Stack<Integer> playcard(Stack<Integer> A, int prime) throws Exception {
@@ -36,9 +47,19 @@ public class PlayingWithCards {
 
 				A1.push(A.pop());
 		}
-
+		int[] barray = new int[B.size()];
+        int i=0;
 		for (int val : B)
-			System.out.print(val + " ");
+			{
+			barray[i]=val;
+			i++;
+			}
+		i--;
+		while(i>=0)
+		{
+			System.out.println(barray[i]);
+			i--;
+		}
 		return A1;
 	}
 
